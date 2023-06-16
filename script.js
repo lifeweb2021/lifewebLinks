@@ -23,7 +23,7 @@ function toggleMode() {
     )
   } else {
     // senão tiver no mode light, manter a foto normal
-    img.setAttribute("src", "./assets/avatar.png")
+    img.setAttribute("src", "./assets/avatar-dark.png")
     img.setAttribute(
       "alt",
       "Foto de Mykon Brinto com fundo azul, usando óculos e jaqueta preta"

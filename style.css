@@ -6,12 +6,12 @@
 }
 
 :root {
-  --text-color: white;
-  --bg-url: url(./assets/bg-mobile.jpg);
+  --text-color: rgb(5, 14, 107);
+  --bg-url: url(./assets/bg-mobile-blue.jpg);
   --stroke-color: rgba(255, 255, 255, 0.5);
-  --surface-color: rgba(255, 255, 255, 0.1);
-  --surface-color-hover: rgba(255, 255, 255, 0.05);
-  --highlight-color: rgba(255, 255, 255, 0.2);
+  --surface-color: rgba(10, 54, 130, 0.1);
+  --surface-color-hover: rgba(46, 2, 117, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.284);
   --switch-bg: url(./assets/moon-stars.svg);
 }
 
@@ -149,11 +149,16 @@ footer {
   transform: translateY(-50%);
   position: absolute;
   z-index: 1;
+
+  animation: slide-out 0.6s;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 .light #switch button {
-  right: 0px;
-  left: initial;
+  animation: slide-in 0.6s forwards;
 }
 
 #switch span {
@@ -170,10 +175,29 @@ footer {
 /*media queries*/
 @media (min-width: 700px) {
   :root {
-    --bg-url: url(./assets/bg-desktop-dark.jpg);
+    --bg-url: url(./assets/bg-desktop-blue.jpg);
   }
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animação de transição de tela */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
